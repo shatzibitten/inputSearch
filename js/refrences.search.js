@@ -557,7 +557,7 @@
 
         var searchIndicator    = false;
         
-        //Logic.
+        //Logic
         if (options.panel)
          {
 
