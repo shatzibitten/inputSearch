@@ -1,0 +1,109 @@
+/* -------- Text search box BEGIN -------- */
+.searchbox {
+    background-color: #004F8A;
+    border-radius: 8px 8px 8px 8px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   -khtml-border-radius: 8px;
+    color: #FFFFFF;
+    display: none;
+    margin-left: 35px;
+    position: fixed;
+    text-align: left;
+    _top:expression(document.body.scrollTop+document.body.clienight-this.clienight-10);
+    left:10px;
+    bottom:10px;
+    padding-right: 0px;
+    *width: 680px;    
+}
+
+.searchbox_01 {
+
+}
+
+html > body .searchbox {
+    *_top:expression(document.body.scrollTop+document.body.clienight-this.clienight-10);
+}
+
+.searchbox fieldset {
+    border: 0 none;
+    text-align: left;
+    height: 16px;
+    padding-top: 3px;
+    padding-left: 3px;
+}
+
+html > body .searchbox fieldset {
+	*padding-top: 2px;
+	*height: 28px;
+}
+
+.searchbox div {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}
+
+.searchbox input {
+    border: 0px;
+    height: 24px;
+    line-height: 24px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    padding-bottom: 2px;
+}
+
+.searchbox #search {
+    width: 180px;
+    padding: 0px 10px 0px 10px;
+    margin-right: 10px;
+}
+
+.searchbox #search-all,
+.searchbox #search-next,
+.searchbox #search-prev,
+.searchbox #search-close {
+    background-color: #3da22a;
+    color: #ffffff;
+    width: 97px;
+}
+
+.searchbox #search-all:hover,
+.searchbox #search-next:hover,
+.searchbox #search-prev:hover,
+.searchbox #search-close:hover {
+    background-color: #72be4c;
+}
+
+.searchbox #search-all:active,
+.searchbox #search-next:active,
+.searchbox #search-prev:active,
+.searchbox #search-close:active {
+    background-color: #18650e;
+}
+
+.searchbox #search-status {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 14px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 2px;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+#search-status.loader {
+    background: url("images/ajax-loader.gif") no-repeat scroll 0px 0 transparent;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.found {
+    background: #3da22a;
+}
+/* -------- Text search box BEGIN -------- */

@@ -1,0 +1,22 @@
+       
+        $("#pages").live("inputSearch.nextPortion", function(obj, currentUrl){
+            $("#current_page_link").removeAttr("id");
+
+            $(".page_link").each(function(){
+                if ($(this).attr("href") === currentUrl)
+                 {
+                  $(this).attr("id", "current_page_link")
+                 }
+            })
+        });
+
+         $("#pages").live("inputSearch.prevPortion", function(obj, currentUrl){
+            $("#current_page_link").removeAttr("id");
+
+            $(".page_link").each(function(){
+                if ($(this).attr("href") === currentUrl)
+                 {
+                  $(this).attr("id", "current_page_link")
+                 }
+            })
+        });
