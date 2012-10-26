@@ -8,17 +8,17 @@ and open the template in the editor.
         <title>Examples</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css"/>
-        <script src="js/jquery-1.7.1.js" type="text/javascript"/></script>
+        <script src="js/jquery-1.8.2.min.js" type="text/javascript"/></script>
     <script src="js/refrences.search.js" type="text/javascript"></script>
 </head>
 <body>
     <h2>Содержание</h2>
     <menu>
         <li>
-            <a href="#01">Постраничный поиск.</a>
+            <a href="/index.html">Постраничный поиск.</a>
         </li>
         <li>
-            <a href="#02">Обычный поиск</a>
+            <a href="/simple_search">Обычный поиск</a>
         </li>
         <li>
             <a href="#03">Текст с продолжением</a>
@@ -67,59 +67,23 @@ and open the template in the editor.
     </div>
 
     <script type="text/javascript">
-				
+	$(function(){			
         $("#searchbox_01").inputSearch({ targetElement:  $("#doc-text-continue"),
             targetName:     "doc-text-continue",
             targetSelector: "#doc-text-continue",
             panel:           true,
+			objs:			 [$("#doc-text-continue")],
             url:             ["text-snippet_01.html", "text-snippet_02.html"],
             smblsTrigger:    3,
             message:         { lang: "ru" }
         });
-
+	});
+	
+	$("#doc-text-continue").live("inputSearch.loadPortion",function(data){
+		console.log(data.data);
+	});
     </script>
 </div>
     
-<div class="block">
-    <a name="02"></a>
-    <h2>Обычный поиск</h2>    
-    <div id="searchbox_02" class="searchbox" style="display:block">
-        <form>
-            <fieldset>
-                <input type="text" id="search" value="<i>Введите запрос</i>" />
-                <input type="button" id="search-all" value="Найти" title="Найти" />
-                <input type="button" id="search-prev" value="Предыдущее" title="Предыдущее" />
-                <span  id="search-status">
-                    1 стр.
-                </span>
-                <input type="button" id="search-next" value="Следующее" title="Следующее" />
-                <input type="button" id="search-close" value="Закрыть" title="Закрыть" />
-            </fieldset>
-        </form>
-    </div>
-
-    <div id="doc-text-continue">
-        <div>
-
-            Алгори́тм, от имени учёного аль-Хорезми (перс. خوارزمی‎ [al-Khwārazmī]) — точный набор инструкций, описывающих порядок действий исполнителя для достижения результата решения задачи за конечное время. В старой трактовке вместо слова «порядок» использовалось слово «последовательность», но по мере развития параллельности в работе компьютеров слово «последовательность» стали заменять более общим словом «порядок». Это связано с тем, что работа каких-то инструкций алгоритма может быть зависима от других инструкций или результатов их работы. Таким образом, некоторые инструкции должны выполняться строго после завершения работы инструкций, от которых они зависят. Независимые инструкции или инструкции, ставшие независимыми из-за завершения работы инструкций, от которых они зависят, могут выполняться в произвольном порядке, параллельно или одновременно, если это позволяют используемые процессор и операционная система.
-
-            Ранее часто писали «алгорифм», сейчас такое написание используется редко, но, тем не менее, имеет место (например, Нормальный алгорифм Маркова).    
-        </div>
-        <br/>
-        <a href="#">Исходный код.</a>
-        <code>
-            <pre>
-            $("#searchbox_01").inputSearch({ 
-            });
-            </pre>
-        </code>
-        <div id="statusbar"></div>
-    </div>
-
-    <script type="text/javascript">				
-        $("#searchbox_01").inputSearch({});
-    </script>
-    <hr>
-</div>
 </body>
 </html>

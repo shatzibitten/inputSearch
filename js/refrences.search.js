@@ -83,6 +83,11 @@
          * Init options.
          * @todo: Make private method or function and replace in it.
          */
+		if (params.targetElement == undefined ||  params.targetElement == null) 
+		 {
+			params.targetElement = $(params.targetSelector || options.targetSelector);
+ 		 }
+		
         $.extend(options, params);
         $.extend(CSS_SLCTS, {
             RES_SLCT: options.targetSelector
@@ -619,14 +624,20 @@
 
                 //@todo переместить это в функцию search и немного подкоректировать. Это позволит сосредоточить логику поиска в одном месте
                 loadPortion(url).done(function(response){
-
+				
+					  var DOMresponse = ["application/xml", "application/html"];
+					  if ($.inArray(response.contentType, DOMresponse) > -1) 
+					   {
+					    response = $(response).text();
+					   }
+					   
                       //create temp element
                       //var tempSource = $("<div></div>");
                       //tempSource[0].innerHTML = response;
                       var searchStatus = false
                       var req          = $(CSS_SLCTS.INPUT_ID).val();
-                           
-                      options.targetElement.html("");
+
+					  options.targetElement.html("");
                       //use native property instead of $().html(), because don't know how much data will comes from server.
                       options.targetElement[0].innerHTML = response;
 
